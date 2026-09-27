@@ -23,7 +23,16 @@ The initial implementations and applicable regressions come from
 The adapter now uses the aggregation function within this package; behavior is
 otherwise retained.
 
-Add `univers-aip-lib-timeseries = {version="=0.1.0",registry="univers"}`.
+Add `univers-aip-lib-timeseries = {version="=0.1.1",registry="univers"}`.
 The release lock validates C0 Data rc.2. Run `bash scripts/check.sh`,
 `bash scripts/build.sh`, and `bash scripts/publish.sh` from a clean committed
 candidate. Registry credentials remain external.
+
+Optional `state-history-adapter` exports
+`DataTimeSeriesStateHistoryAdapter::new(Arc<dyn DataTimeSeriesQueryPort>)`.
+It implements the public World `StateHistoryReadPort`, requires the Data
+`StateQuery` capability and validates both requests and responses. It translates
+state reads using LocalOnly and optional Last aggregation, preserving the exact
+scope, snapshot, quality, provenance, lineage, warnings and completeness.
+It owns no transport, backend selection, semantic evaluation or authorization.
+Only the C0 Data and World contracts are needed.

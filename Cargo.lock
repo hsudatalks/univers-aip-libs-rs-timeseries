@@ -395,9 +395,9 @@ checksum = "d245f478577f809a851594d02313b640fb437e0bb33866753cff937863096954"
 
 [[package]]
 name = "univers-aip-contracts-data"
-version = "1.0.0-rc.2"
+version = "1.0.0-rc.1"
 source = "sparse+https://david-server.mink-ph.ts.net/api/v1/crates/"
-checksum = "b23477a6a8c2aa75d6c82fe1eae92ad9be5fec81414337ed236fb838ab1b90c8"
+checksum = "8c2fa57ddb3fa7c6848d88af401ef606a1d34f76305ee7c8facb869463ecebe8"
 dependencies = [
  "async-trait",
  "chrono",
@@ -409,9 +409,9 @@ dependencies = [
 
 [[package]]
 name = "univers-aip-contracts-shared"
-version = "1.0.0-rc.2"
+version = "1.0.0-rc.1"
 source = "sparse+https://david-server.mink-ph.ts.net/api/v1/crates/"
-checksum = "f5347733f2de90e26626f76a435c07c42db4b3b492ab5eab30b442686262a581"
+checksum = "cc166967baf889d95e5d8d0e0210f431f4803d6724d93a0bf25c24768c98c43e"
 dependencies = [
  "serde",
  "sha2",
@@ -419,8 +419,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "univers-aip-contracts-world"
+version = "1.0.0-rc.1"
+source = "sparse+https://david-server.mink-ph.ts.net/api/v1/crates/"
+checksum = "304451ea238e3fc83524493e88410a7bd850d747ff8dbc6ad4c5f8f00b766ca2"
+dependencies = [
+ "async-trait",
+ "chrono",
+ "serde",
+ "univers-aip-contracts-data",
+]
+
+[[package]]
 name = "univers-aip-lib-timeseries"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "async-trait",
  "chrono",
@@ -428,6 +440,7 @@ dependencies = [
  "serde_json",
  "tokio",
  "univers-aip-contracts-data",
+ "univers-aip-contracts-world",
 ]
 
 [[package]]
